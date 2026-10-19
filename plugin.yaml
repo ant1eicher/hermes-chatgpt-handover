@@ -1,0 +1,4 @@
+name: chatgpt-handover
+version: 0.1.0
+description: "Browse ChatGPT conversations synced by the Mac mini collector and hand one over to a Hermes chat. Desktop page + dashboard backend only; adds no agent tools or hooks."
+author: "Nova (for Anton)"

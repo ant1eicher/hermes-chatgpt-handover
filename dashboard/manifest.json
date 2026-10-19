@@ -1,0 +1,9 @@
+{
+  "name": "chatgpt-handover",
+  "label": "ChatGPT Handover",
+  "description": "Browse recent ChatGPT conversations synced by the companion browser extension and hand one over to a Hermes chat.",
+  "icon": "Package",
+  "version": "0.1.0",
+  "tab": { "hidden": true },
+  "api": "plugin_api.py"
+}
