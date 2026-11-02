@@ -239,6 +239,14 @@ def record_sync_status(
     with _lock:
         idx = load_index()
         prev = idx.get("sync") or {}
+        if state == "paused":
+            # The night pause is not a sync. It must neither hide a failure (the UI would show
+            # green over a dead collector) nor refresh last_ok_at.
+            if prev.get("state") not in (None, "ok", "paused"):
+                return
+            idx["sync"] = {**prev, "at": time.time(), "state": "paused"}
+            save_index(idx)
+            return
         idx["sync"] = {
             "at": time.time(),
             "ok": bool(ok),
